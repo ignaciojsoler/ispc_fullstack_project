@@ -5,14 +5,74 @@
 
   <div class="container">
     <div class="row flex-lg-nowrap">
-      <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
+      <div class="col-12 col-lg-auto mb-3" style="width: 250px;">
         <div class="card p-3">
           <div class="e-navlist e-navlist--active-bg">
             <ul class="nav">
-              
-              <li class="nav-item"><a class="nav-link px-2" routerLink="/dashboard"><i class="fa fa-fw fa-th mr-1"></i><span> CRUD</span></a></li>
-              <li class="nav-item"><a class="nav-link px-2" routerLink="/dashboard-user"><i class="fa fa-fw fa-cog mr-1"></i><span> Configuración</span></a></li>
+              <li class="nav-item">
+                <a class="nav-link px-2" routerLink="/dashboard"><i class="fa fa-fw fa-th mr-1"></i><span> CRUD</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-2" routerLink="/dashboard-user"><i class="fa fa-fw fa-cog mr-1"></i><span> Configuración</span></a>
+              </li>
             </ul>
+          </div>
+        </div> <br>
+
+        <div class="card">
+          <div class="card-body">
+            <div class="text-center px-xl-3">
+              <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#user-form-modal">Agregar nuevo</button>
+            </div>
+            <hr class="my-3">
+            <div class="e-navlist e-navlist--active-bold">
+              <ul class="nav">
+                <li class="nav-item active">
+                  <a href="#" class="nav-link"><span>Todos</span>&nbsp;<small>/&nbsp;32</small></a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link"><span>Activos</span>&nbsp;<small>/&nbsp;16</small></a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link"><span>Seleccionados</span>&nbsp;<small>/&nbsp;0</small></a>
+                </li>
+              </ul>
+            </div>
+            <hr class="my-3">
+            <div>
+              <div class="form-group">
+                <label>Desde fecha - hasta:</label>
+                <div>
+                  <input id="dates-range" class="form-control flatpickr-input" placeholder="11 Dic 21 - 24 May 23" type="text" readonly="readonly">
+                </div>
+              </div> <br>
+              <div class="form-group">
+                <label>Buscar por nombre:</label>
+                <div><input class="form-control w-100" type="text" placeholder="Nombre" value=""></div>
+              </div>
+            </div>
+            <hr class="my-3">
+            <div class="">
+              <label>Estado:</label>
+              <div class="px-2">
+                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" name="user-status" id="users-status-disabled">
+                  <label class="custom-control-label" for="users-status-disabled">Inactivo</label>
+                </div>
+              </div>
+              <div class="px-2">
+                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" name="user-status" id="users-status-active">
+                  <label class="custom-control-label" for="users-status-active">Activo</label>
+                </div>
+              </div>
+              <div class="px-2">
+                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" name="user-status" id="users-status-any" checked="">
+                  <label class="custom-control-label" for="users-status-any">Todos</label>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -37,14 +97,13 @@
                         <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">Juan Perez</h4>
                         <div class="text-muted"><small>Última conexión hace 2 horas</small></div>
                         <div class="mt-2">
-                          <button class="btn btn-primary" type="button">
+                          <button class="btn-sm btn-secondary" type="button">
                             <i class="fa fa-fw fa-camera"></i>
                             <span> Cambiar foto</span>
                           </button>
                         </div>
                       </div>
                       <div class="text-center text-sm-right">
-                        <!-- <span class="badge badge-secondary">administrator</span> -->
                         <div class="text-muted"><small>Se unió el 09 de Dic de 2017</small></div>
                       </div>
                     </div>
@@ -309,4 +368,3 @@
     </div>
   </div>
 </main>
-
