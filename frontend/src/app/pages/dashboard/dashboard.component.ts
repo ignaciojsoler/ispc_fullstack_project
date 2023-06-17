@@ -23,6 +23,13 @@ export class DashboardComponent implements OnInit {
       this.profesionales = resultado;
     });
   }
+  borrarProfesional() {
+    this.profesionalService.borrar().subscribe((resultado) => {
+      console.log(resultado);
+      this.profesionales = resultado;
+    })
+    };
+  
 
   
 }

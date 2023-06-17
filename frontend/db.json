@@ -1,7 +1,7 @@
 {
   "trabajadores": [
     {
-      "id_trabajador": 1,
+      "id": 1,
       "nombre": "José",
       "apellido": "Villegas",
       "email": "josevillegas@wefix.com",
@@ -15,7 +15,7 @@
     },
 
     {
-      "id_trabajador": 2,
+      "id": 2,
       "nombre": "Edgardo",
       "apellido": "Porgi",
       "email": "edgardo@wefix.com",
@@ -29,7 +29,7 @@
     },
 
     {
-      "id_trabajador": 3,
+      "id": 3,
       "nombre": "Tadeo",
       "apellido": "Gonzalez",
       "email": "tadeo@wefix.com",
@@ -43,7 +43,7 @@
     },
 
     {
-      "id_trabajador": 4,
+      "id": 4,
       "nombre": "Carlos",
       "apellido": "Carbonelli",
       "email": "carlos@wefix.com",
@@ -57,7 +57,7 @@
     },
 
     {
-      "id_trabajador": 5,
+      "id": 5,
       "nombre": "Luis",
       "apellido": "Ponce",
       "email": "luis@wefix.com",
@@ -71,7 +71,7 @@
     },
 
     {
-      "id_trabajador": 6,
+      "id": 6,
       "nombre": "Mauricio",
       "apellido": "Paz",
       "email": "Mauricio@wefix.com",
@@ -85,7 +85,7 @@
     },
 
     {
-      "id_trabajador": 7,
+      "id": 7,
       "nombre": "Fabricio",
       "apellido": "Liberto",
       "email": "fabricio@wefix.com",
@@ -99,7 +99,7 @@
     },
 
     {
-      "id_trabajador": 8,
+      "id": 8,
       "nombre": "Mario",
       "apellido": "Cejas",
       "email": "mario@wefix.com",
@@ -113,7 +113,7 @@
     },
 
     {
-      "id_trabajador": 9,
+      "id": 9,
       "nombre": "Diego",
       "apellido": "Quevedo",
       "email": "diego@wefix.com",
@@ -127,7 +127,7 @@
     },
 
     {
-      "id_trabajador": 10,
+      "id": 10,
       "nombre": "Adrián",
       "apellido": "López",
       "email": "adrian@wefix.com",
@@ -141,7 +141,7 @@
     },
 
     {
-      "id_trabajador": 11,
+      "id": 11,
       "nombre": "Mateo",
       "apellido": "Ramírez",
       "email": "mateo@wefix.com",
@@ -155,7 +155,7 @@
     },
 
     {
-      "id_trabajador": 12,
+      "id": 12,
       "nombre": "Paulo",
       "apellido": "Rojo",
       "email": "pauloh@wefix.com",
