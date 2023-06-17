@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from django.contrib.auth import authenticate, login, logout
-from rest_framework import status
+from rest_framework import status, generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAdminUser, AllowAny, IsAuthenticated
@@ -37,4 +37,6 @@ class LogoutView(APIView):
     # Devolvemos la respuesta al cliente
     return Response(
       status=status.HTTP_200_OK)
-    
+
+class SignupView(generics.CreateAPIView):
+  serializer_class = UserSerializer    
