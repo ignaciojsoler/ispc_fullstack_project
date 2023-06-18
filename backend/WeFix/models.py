@@ -68,3 +68,4 @@ class Trabajador(models.Model):
         verbose_name_plural = "Trabajadores"
         db_table = "trabajador"
         verbose_name = "Información del trabajador"
+

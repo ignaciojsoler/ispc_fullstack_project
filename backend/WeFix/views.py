@@ -51,17 +51,17 @@ class SignupView(generics.CreateAPIView):
 
 #CRUD:
 
-class verProfesionales(viewsets.ReadOnlyModelViewSet):
+class VerProfesionales(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny] 
     queryset = Trabajador.objects.all()
     serializer_class = TrabajadorSerializer
 
-class verProfesiones(viewsets.ReadOnlyModelViewSet):
+class VerProfesiones(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny] 
     queryset = Profesion.objects.all()
     serializer_class = ProfesionSerializer
 
-class agregarProfesional(APIView):
+class AgregarProfesional(APIView):
     permission_classes = [IsAdminUser]
     def post(self, request, format=None):
         serializer = TrabajadorSerializer(data=request.data)
@@ -71,16 +71,6 @@ class agregarProfesional(APIView):
                 status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# Ver y modificar el perfil:
-class verPerfil(generics.RetrieveAPIView):
-    permission_classes = [IsAuthenticated]
-    serializer_class = UserSerializer
-    http_method_names = ['get', 'patch']
-    def get_object(self):
-        if self.request.user.is_authenticated:
-            return self.request.user
-
-# Listar usuarios (Admin):
 class ListarUsuarios(generics.ListCreateAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
@@ -91,3 +81,13 @@ class ListarUsuarios(generics.ListCreateAPIView):
         serializer = UserSerializer(queryset, many=True)
         if self.request.user.is_authenticated:
             return Response(serializer.data)
+
+# Ver y modificar el perfil (User):
+class VerPerfil(generics.RetrieveAPIView):
+    permission_classes = [IsAuthenticated]
+    serializer_class = UserSerializer
+    http_method_names = ['get', 'patch']
+    def get_object(self):
+        if self.request.user.is_authenticated:
+            return self.request.user
+
