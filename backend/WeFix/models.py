@@ -8,7 +8,6 @@ class CustomUser(AbstractUser):
     class Meta:
         db_table = 'WeFix_customuser'
 
-
 class Profesion(models.Model):
     nombre = models.CharField(max_length=100)
 
