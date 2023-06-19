@@ -4,8 +4,6 @@ body {
 
 .login {
   display: flex;
-  /*min-height: 100vh;
-  max-height: 100vh;*/
   overflow: hidden;
 }
 
@@ -17,7 +15,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 50%;
-  padding: 4.375rem;
+  padding: 60px 4.375rem;
   box-shadow: 10px 10px 49px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 10px 10px 49px 0px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 10px 10px 49px 0px rgba(0, 0, 0, 0.75);

@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardUserComponent } from './dashboard-user/dashboard-user.component';
 import { PerfilUserComponent } from './perfil-user/perfil-user.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [ 
@@ -30,7 +31,8 @@ import { PerfilUserComponent } from './perfil-user/perfil-user.component';
     SoporteComponent,
     DashboardComponent,
     DashboardUserComponent,
-    PerfilUserComponent
+    PerfilUserComponent,
+    CarritoComponent
   ],
   imports: [ ComponentsModule, AppRoutingModule, CommonModule, ReactiveFormsModule ],
   exports: [

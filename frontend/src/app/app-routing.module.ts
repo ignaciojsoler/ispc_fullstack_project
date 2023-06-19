@@ -13,6 +13,7 @@ import { DatosPrestadorComponent } from './pages/datos-prestador/datos-prestador
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { DashboardUserComponent } from './pages/dashboard-user/dashboard-user.component';
 import { PerfilUserComponent } from './pages/perfil-user/perfil-user.component';
+import { CarritoComponent } from './pages/carrito/carrito.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard-user', component: DashboardUserComponent },
   { path: 'perfil-user', component: PerfilUserComponent},
+  { path: 'carrito', component: CarritoComponent}
 ];
 
 @NgModule({
