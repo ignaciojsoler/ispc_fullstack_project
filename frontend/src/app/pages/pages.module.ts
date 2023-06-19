@@ -17,6 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardUserComponent } from './dashboard-user/dashboard-user.component';
 import { PerfilUserComponent } from './perfil-user/perfil-user.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { HistorialComponent } from './historial/historial.component';
 
 @NgModule({
   declarations: [ 
@@ -32,7 +33,8 @@ import { CarritoComponent } from './carrito/carrito.component';
     DashboardComponent,
     DashboardUserComponent,
     PerfilUserComponent,
-    CarritoComponent
+    CarritoComponent,
+    HistorialComponent
   ],
   imports: [ ComponentsModule, AppRoutingModule, CommonModule, ReactiveFormsModule ],
   exports: [
