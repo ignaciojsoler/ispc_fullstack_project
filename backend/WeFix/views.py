@@ -64,7 +64,7 @@ class VerProfesiones(viewsets.ReadOnlyModelViewSet):
 class AgregarProfesional(APIView):
     permission_classes = [IsAdminUser]
     def post(self, request, format=None):
-        serializer = TrabajadorSerializer(data=request.data)
+        serializer = ProfesionSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data,
