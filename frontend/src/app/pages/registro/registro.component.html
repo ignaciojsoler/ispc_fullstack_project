@@ -7,45 +7,103 @@
       <h4 class="formulario_title">
         <strong>Unite a nuestra comunidad ¡Registrate ahora!</strong>
       </h4>
-      <br />
-      <h4>Seleccione su categoría:</h4>
-      <br />
-      <div>
-        <button
-          type="submit"
-          class="formulario__button m-2"
-          [ngClass]="{ 'selected': user_type === 'cliente' }"
-          (click)="setUserType('cliente')"
-        >
-          CLIENTE
-        </button>
-        <button
-          type="submit"
-          class="formulario__button m-2"
-          [ngClass]="{ 'selected': user_type === 'trabajador' }"
-          (click)="setUserType('trabajador')"
-        >
-          TRABAJADOR
-        </button>
+      <br/><br>
+
+      <h4>Seleccione un Plan:</h4> <br>
+      <div class="container ">
+        <div class="row gutters">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div class="pricing-plan">
+              <div class="pricing-header">
+                <h4 class="pricing-title">Plan Soy cliente</h4>
+                <div class="pricing-cost">$0</div>
+                <div class="pricing-save">Sin impuestos</div>
+              </div>
+              <ul class="pricing-features">
+                <li>Acceso a todos los profesionales</li>
+                <li>Acceso a todas las categorías</li>
+                <li>Búsquedas ilimitadas en el sitio</li>
+                <li>Todos los servicios en un lugar</li>
+                <li>Máxima seguridad</li>
+              </ul>
+              <button
+                type="submit"
+                class="formulario__button m-2"
+                [ngClass]="{ 'selected': user_type === 'cliente' }"
+                (click)="setUserType('cliente')"
+              >
+                Seleccionar Plan
+              </button>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div class="pricing-plan">
+              <div class="pricing-header red">
+                <h4 class="pricing-title">Plan Soy Profesional</h4>
+                <div class="pricing-cost">$1000 /mes</div>
+                <div class="pricing-save">Precio final</div>
+              </div>
+              <ul class="pricing-features">
+                <li>Tus servicios publicados en un solo lugar</li>
+                <li>Visibilidad en la red las 24 hs</li>
+                <li>Mayor acceso a potenciales clientes</li>
+                <li>Actualizaciones inmediatas</li>
+                <li>Asistencia técnica</li>
+              </ul>
+              <button
+                type="submit"
+                class="formulario__button m-2"
+                [ngClass]="{ 'selected': user_type === 'trabajador' }"
+                (click)="setUserType('trabajador')"
+              >
+                Seleccionar Plan
+              </button>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div class="pricing-plan">
+              <div class="pricing-header red">
+                <h4 class="pricing-title">Plan Soy Profesional</h4>
+                <div class="pricing-cost">$2700 /3 meses</div>
+                <div class="pricing-save">Precio final</div>
+              </div>
+              <ul class="pricing-features">
+                <li>Tus servicios publicados en un solo lugar</li>
+                <li>Visibilidad en la red las 24 hs</li>
+                <li>Mayor acceso a potenciales clientes</li>
+                <li>Actualizaciones inmediatas</li>
+                <li>Asistencia técnica</li>
+              </ul>
+              <button
+                type="submit"
+                class="formulario__button m-2"
+                [ngClass]="{ 'selected': user_type === 'trabajador' }"
+                (click)="setUserType('trabajador')"
+              >
+                Seleccionar Plan
+              </button>
+            </div>
+          </div>
+        </div>
         <p class="warning" id="warning"></p>
       </div>
+      <br />
+      
       <form class="formulario" id="form" (submit)="handleSubmit()">
         <label for="nombre" class="formulario__label">
           <strong>NOMBRE</strong>
           </label
->
+        >
         <input
           type="text" [formControl]="name"
           placeholder="Ingresa un nombre"
           name="name"
           class="formulario__input"
           id="nombre"
-          
         />
         <div class="alert alert-danger mt-1" [hidden]="name.valid || name.pristine">
           El nombre es obligatorio
         </div>
-
         <label for="nombre" class="formulario__label">
           <strong>APELLIDO</strong></label
         >
@@ -59,6 +117,7 @@
         <div class="alert alert-danger mt-1" [hidden]="surname.valid || surname.pristine">
           El apellido es obligatorio
         </div>
+
         <label for="nombre" class="formulario__label">
           <strong>CORREO ELECTRÓNICO</strong></label
         >
@@ -77,7 +136,6 @@
             El email debe ser válido
           </span>
         </div>
-
         <label for="password" class="formulario__label">
           <strong>CONTRASEÑA</strong></label
         >
@@ -97,7 +155,6 @@
             La contraseña debe tener 8 (ocho) o más caracteres
           </span>
         </div>
-
         <label for="password" class="formulario__label">
           <strong>CONFIRMA CONTRASEÑA</strong></label
         >
@@ -107,7 +164,6 @@
           name="password"
           class="formulario__input"
         />
-
         <div class="alert alert-danger mt-1" [hidden]="repeatpassword.valid || repeatpassword.pristine">
           <span *ngIf="repeatpassword?.hasError('rerequired')">
            Repetir la contraseña es obligatorio
@@ -117,7 +173,6 @@
             La contraseña debe tener 8 (ocho) o más caracteres
           </span>
         </div>
-
 
         <ng-container *ngIf="user_type === 'cliente'">
             <label for="nombre" class="formulario__label">
@@ -133,7 +188,6 @@
               <div class="alert alert-danger mt-1" [hidden]="address.valid || address.pristine">
                 La dirección es obligatorio
               </div>
-
               <label for="nombre" class="formulario__label">
                 <strong>CIUDAD</strong></label
               >
@@ -147,8 +201,6 @@
               <div class="alert alert-danger mt-1" [hidden]="city.valid || city.pristine">
                 La ciudad es obligatoria
               </div>
-
-
               <label for="nombre" class="formulario__label">
                 <strong>PROVINCIA</strong></label
               >
@@ -162,23 +214,8 @@
               <div class="alert alert-danger mt-1" [hidden]="province.valid || province.pristine">
                 La provincia es obligatoria
               </div>
-
-              <label for="nombre" class="formulario__label">
-                <strong>PAÍS</strong></label
-              >
-              <input
-                type="text" [formControl]="country"
-                placeholder="Ingresa un país"
-                name="name"
-                class="formulario__input"
-                id="nombre"
-              />
-              <div class="alert alert-danger mt-1" [hidden]="country.valid || country.pristine">
-                El país es obligatorio
-              </div>
-
-
         </ng-container>
+
         <ng-container *ngIf="user_type === 'trabajador'">
             <label for="nombre" class="formulario__label">
                 <strong>PROFESIÓN</strong></label
@@ -190,11 +227,9 @@
                 class="formulario__input"
                 id="nombre"
               />
-
               <div class="alert alert-danger mt-1" [hidden]="profession.valid || profession.pristine">
                 La profesión es obligatoria
               </div>
-
               <label for="nombre" class="formulario__label">
                 <strong>PRECIO POR HORA</strong></label
               >
@@ -205,7 +240,6 @@
                 class="formulario__input"
                 id="nombre"
               />
-
               <div class="alert alert-danger mt-1" [hidden]="priceperhour.valid || priceperhour.pristine">
                 El precio por hora es obligatorio
               </div>
