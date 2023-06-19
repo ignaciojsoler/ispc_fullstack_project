@@ -1,6 +1,10 @@
 main {
   background-color: var(--main-white);
-  padding: 60px;
+  padding-bottom: 60px;
+  padding-top: 6em;
+}
+
+.container {
   overflow: hidden;
 }
 
