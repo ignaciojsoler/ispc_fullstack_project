@@ -53,13 +53,23 @@ class SignupView(generics.CreateAPIView):
 
 class VerProfesionales(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny] 
-    queryset = Trabajador.objects.all()
-    serializer_class = ProfesionalSerializer
+    def get(self, request, format=None):
+        if Trabajador.objects.all().exists():
+            categories = Trabajador.objects.all()
+            serializer = ProfesionalSerializer(categories, many=True)
+            return Response({'categories': serializer.data}, status=status.HTTP_200_OK)
+        else:
+            return Response({'error': 'Categories Not Found'}, status=status.HTTP_404_NOT_FOUND)
 
 class VerProfesiones(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny] 
-    queryset = Profesion.objects.all()
-    serializer_class = ProfesionSerializer
+    def get(self, request, format=None):
+        if Profesion.objects.all().exists():
+            categories = Profesion.objects.all()
+            serializer = ProfesionSerializer(categories, many=True)
+            return Response({'categories': serializer.data}, status=status.HTTP_200_OK)
+        else:
+            return Response({'error': 'Categories Not Found'}, status=status.HTTP_404_NOT_FOUND)
 
 class AgregarProfesional(APIView):
     permission_classes = [IsAdminUser]

@@ -1,5 +1,5 @@
-from django.urls import path, include 
-from .views import LoginView, LogoutView, SignupView, VerProfesionales, VerProfesiones, VerPerfil, AgregarProfesional, ListarUsuarios
+from django.urls import path 
+from .views import *
 
 urlpatterns = [ # endpoints
   # Auth views
