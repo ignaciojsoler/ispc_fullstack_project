@@ -16,7 +16,7 @@ urlpatterns = [ # endpoints
   path('verProfesiones/',
     VerProfesiones.as_view(), name='verProfesiones'),
   
-  path('user/VerPerfil/',
+  path('user/verPerfil/',
     VerPerfil.as_view(), name='user_verPerfil'),
   
   path('auth/AgregarProfesional/',

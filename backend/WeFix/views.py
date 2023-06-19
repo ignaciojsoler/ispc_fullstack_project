@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAdminUser, AllowAny, IsAuthenticated
 
-from .serializers import UserSerializer, TrabajadorSerializer, ProfesionSerializer
+from .serializers import UserSerializer, ProfesionalSerializer, ProfesionSerializer
 from .models import Trabajador, CustomUser, Profesion
 
 # Login:
@@ -54,7 +54,7 @@ class SignupView(generics.CreateAPIView):
 class VerProfesionales(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny] 
     queryset = Trabajador.objects.all()
-    serializer_class = TrabajadorSerializer
+    serializer_class = ProfesionalSerializer
 
 class VerProfesiones(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny] 

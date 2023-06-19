@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password
-from .models import Trabajador, Profesion, Membresia
+from .models import Trabajador, Profesion
 
 class UserSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(required=True)
