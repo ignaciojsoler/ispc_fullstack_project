@@ -13,15 +13,16 @@ urlpatterns = [ # endpoints
   
   path('verProfesionales/',
     VerProfesionales.as_view(), name='verProfesionales'),
-  path('verProfesiones/',
-    VerProfesiones.as_view(), name='verProfesiones'),
   
-  path('user/verPerfil/',
-    VerPerfil.as_view(), name='user_verPerfil'),
+  # path('verProfesiones/',
+  #   VerProfesiones.as_view(), name='verProfesiones'),
   
-  path('auth/AgregarProfesional/',
-    AgregarProfesional.as_view(), name='auth_agregarProfesional'),
-  path('auth/ListarUsuarios/',
-    ListarUsuarios.as_view(), name='auth_listarUsuarios'),
+  # path('user/verPerfil/',
+  #   VerPerfil.as_view(), name='user_verPerfil'),
+  
+  # path('auth/AgregarProfesional/',
+  #   AgregarProfesional.as_view(), name='auth_agregarProfesional'),
+  # path('auth/ListarUsuarios/',
+  #   ListarUsuarios.as_view(), name='auth_listarUsuarios'),
     
 ]
