@@ -36,29 +36,29 @@ export class RegistroComponent {
     this.router.navigate(this.user_type === 'cliente' ? ['/login'] : ['/pagos'])
   }
 
-  form: FormGroup = this.FormBuilder.group({
-    name: ['', [Validators.required]],
-    surname: ['', [Validators.required]],
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(8)]],
-    repeatpassword: ['', [Validators.required, Validators.minLength(8)]],
-    address: ['', [Validators.required]],
-    city: ['', [Validators.required]],
-    province: ['', [Validators.required]],
-    profession: ['', [Validators.required]], //ACA ME QUEDE, FALTA PASAR AL HTML
-    priceperhour: ['', [Validators.required]],
-  })
+  // form: FormGroup = this.FormBuilder.group({
+  //   name: ['', [Validators.required]],
+  //   surname: ['', [Validators.required]],
+  //   email: ['', [Validators.required, Validators.email]],
+  //   password: ['', [Validators.required, Validators.minLength(8)]],
+  //   repeatpassword: ['', [Validators.required, Validators.minLength(8)]],
+  //   address: ['', [Validators.required]],
+  //   city: ['', [Validators.required]],
+  //   province: ['', [Validators.required]],
+  //   profession: ['', [Validators.required]], //ACA ME QUEDE, FALTA PASAR AL HTML
+  //   priceperhour: ['', [Validators.required]],
+  // })
 
-  onEnviar(event: Event)
-  {
-    event?.preventDefault;
-    if (this.form.valid) {
-      alert ('Enviar al servidor')
-    }
-    else {
-      this.form.markAllAsTouched();
-    }
-  }
+  // onEnviar(event: Event)
+  // {
+  //   event?.preventDefault;
+  //   if (this.form.valid) {
+  //     alert ('Enviar al servidor')
+  //   }
+  //   else {
+  //     this.form.markAllAsTouched();
+  //   }
+  // }
 }
 
 
