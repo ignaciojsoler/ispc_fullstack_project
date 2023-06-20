@@ -10,6 +10,8 @@
         class="formulario"
         name="formulario"
         onsubmit="return validarForm()"
+        [formGroup]="form"
+        (ngSubmit)="onSubmit($event, usuario)"
       >
         <label for="email" class="formulario__label"
           ><strong>CORREO ELECTRÓNICO</strong></label
