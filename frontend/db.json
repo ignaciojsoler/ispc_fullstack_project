@@ -1,47 +1,21 @@
 {
   "trabajadores": [
     {
-      "id": 1,
-      "nombre": "José",
-      "apellido": "Villegas",
-      "email": "josevillegas@wefix.com",
-      "telefono": "4030345",
-      "direccion": "San Martin 1120",
-      "profesion": ["Electricidad", "Albañiería"],
-      "descripcion": "Esto es una descripción laboral de José Villegas",
-      "matricula": "",
-      "ranking": "3.5",
-      "imagen": "/assets/img/fotoPrestador.jpg"
-    },
-
-    {
-      "id": 2,
-      "nombre": "Edgardo",
-      "apellido": "Porgi",
-      "email": "edgardo@wefix.com",
-      "telefono": "48303457",
-      "direccion": "Mitre 715",
-      "profesion": ["Carpintería"],
-      "descripcion": "Esto es una descripción laboral de Edgardo Porgi",
-      "matricula": "",
-      "ranking": "4",
-      "imagen": "/assets/img/fotoPrestador.jpg"
-    },
-
-    {
       "id": 3,
       "nombre": "Tadeo",
       "apellido": "Gonzalez",
       "email": "tadeo@wefix.com",
       "telefono": "45309456",
       "direccion": "General Paz 3540",
-      "profesion": ["Jardinería", "Carpintería"],
+      "profesion": [
+        "Jardinería",
+        "Carpintería"
+      ],
       "descripcion": "Esto es una descripción laboral de Tadeo Gonzalez",
       "matricula": "",
       "ranking": "5",
       "imagen": "/assets/img/fotoPrestador.jpg"
     },
-
     {
       "id": 4,
       "nombre": "Carlos",
@@ -49,13 +23,14 @@
       "email": "carlos@wefix.com",
       "telefono": "4603477",
       "direccion": "Ituzaingó 1160",
-      "profesion": ["Electricidad"],
+      "profesion": [
+        "Electricidad"
+      ],
       "descripcion": "Esto es una descripción laboral de Carlos Carbonelli",
       "matricula": "",
       "ranking": "3",
       "imagen": "/assets/img/fotoPrestador.jpg"
     },
-
     {
       "id": 5,
       "nombre": "Luis",
@@ -63,13 +38,15 @@
       "email": "luis@wefix.com",
       "telefono": "4503376",
       "direccion": "Ayacucho 867",
-      "profesion": ["Albañilería", "Pintura"],
+      "profesion": [
+        "Albañilería",
+        "Pintura"
+      ],
       "descripcion": "Esto es una descripción laboral de Luis Ponce",
       "matricula": "",
       "ranking": "4.5",
       "imagen": "/assets/img/fotoPrestador.jpg"
     },
-
     {
       "id": 6,
       "nombre": "Mauricio",
@@ -77,13 +54,15 @@
       "email": "Mauricio@wefix.com",
       "telefono": "4893416",
       "direccion": "San Juan 1566",
-      "profesion": ["Plomería", "Gas"],
+      "profesion": [
+        "Plomería",
+        "Gas"
+      ],
       "descripcion": "Esto es una descripción laboral de Mauricio Paz",
       "matricula": "",
       "ranking": "3",
       "imagen": "/assets/img/fotoPrestador.jpg"
     },
-
     {
       "id": 7,
       "nombre": "Fabricio",
@@ -91,13 +70,14 @@
       "email": "fabricio@wefix.com",
       "telefono": "4103451",
       "direccion": "Riobamba 340",
-      "profesion": ["Gas"],
+      "profesion": [
+        "Gas"
+      ],
       "descripcion": "Esto es una descripción laboral de Fabricio Liberto",
       "matricula": "",
       "ranking": "5",
       "imagen": "/assets/img/fotoPrestador.jpg"
     },
-
     {
       "id": 8,
       "nombre": "Mario",
@@ -105,13 +85,15 @@
       "email": "mario@wefix.com",
       "telefono": "4803426",
       "direccion": "Chacabuco 1100",
-      "profesion": ["Electricista", "Fontanería"],
+      "profesion": [
+        "Electricista",
+        "Fontanería"
+      ],
       "descripcion": "Esto es una descripción laboral de Mario Cejas",
       "matricula": "",
       "ranking": "4",
       "imagen": "/assets/img/fotoPrestador.jpg"
     },
-
     {
       "id": 9,
       "nombre": "Diego",
@@ -119,13 +101,14 @@
       "email": "diego@wefix.com",
       "telefono": "4703456",
       "direccion": "Formosa 1478",
-      "profesion": ["Pintura"],
+      "profesion": [
+        "Pintura"
+      ],
       "descripcion": "Esto es una descripción laboral de Diego Quevedo",
       "matricula": "",
       "ranking": "2.5",
       "imagen": "/assets/img/fotoPrestador.jpg"
     },
-
     {
       "id": 10,
       "nombre": "Adrián",
@@ -133,13 +116,15 @@
       "email": "adrian@wefix.com",
       "telefono": "4703456",
       "direccion": "Catamarca 3479",
-      "profesion": ["Albañilería", "Pintura"],
+      "profesion": [
+        "Albañilería",
+        "Pintura"
+      ],
       "descripcion": "Esto es una descripción laboral de Adrián López",
       "matricula": "",
       "ranking": "3",
       "imagen": "/assets/img/fotoPrestador.jpg"
     },
-
     {
       "id": 11,
       "nombre": "Mateo",
@@ -147,13 +132,14 @@
       "email": "mateo@wefix.com",
       "telefono": "4903469",
       "direccion": "Pedro Centeno 2214",
-      "profesion": ["Electricidad"],
+      "profesion": [
+        "Electricidad"
+      ],
       "descripcion": "Esto es una descripción laboral de Mateo Ramírez",
       "matricula": "",
       "ranking": "3.5",
       "imagen": "/assets/img/fotoPrestador.jpg"
     },
-
     {
       "id": 12,
       "nombre": "Paulo",
@@ -161,7 +147,9 @@
       "email": "pauloh@wefix.com",
       "telefono": "0303456",
       "direccion": "Rivadavia 897",
-      "profesion": ["Plomería"],
+      "profesion": [
+        "Plomería"
+      ],
       "descripcion": "Esto es una descripción laboral de Paulo Rojo",
       "matricula": "",
       "ranking": "4",

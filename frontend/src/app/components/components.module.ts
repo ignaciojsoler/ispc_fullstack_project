@@ -5,13 +5,13 @@ import { CommonModule } from '@angular/common';
 import { ButtonComponent } from './button/button.component';
 import { InputComponent } from './input/input.component';
 import { CardPrestadorComponent } from './card-prestador/card-prestador.component';
-import { DashboardUserComponent } from './dashboard-user/dashboard-user.component';
+import { DashboardUserItemComponent } from './dashboard-user-item/dashboard-user-item.component';
 
 @NgModule({
   declarations: [ 
     ButtonComponent, 
     InputComponent, 
-    CardPrestadorComponent, DashboardUserComponent 
+    CardPrestadorComponent, DashboardUserItemComponent 
   ],
   imports: [
     CommonModule, AppRoutingModule
@@ -20,7 +20,7 @@ import { DashboardUserComponent } from './dashboard-user/dashboard-user.componen
     ButtonComponent, 
     InputComponent, 
     CardPrestadorComponent,
-    DashboardUserComponent
+    DashboardUserItemComponent
   ],
 })
 

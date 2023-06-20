@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-dashboard-user',
-  templateUrl: './dashboard-user.component.html',
-  styleUrls: ['./dashboard-user.component.css']
+  selector: 'app-dashboard-user-item',
+  templateUrl: './dashboard-user-item.component.html',
+  styleUrls: ['./dashboard-user-item.component.css']
 })
-export class DashboardUserComponent {
+export class DashboardUserItemComponent {
   @Input() id: string = '';
   @Input() imagen: string = '';
   @Input() nombre: string = '';

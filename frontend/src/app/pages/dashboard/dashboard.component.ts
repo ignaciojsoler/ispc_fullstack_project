@@ -9,9 +9,9 @@ import { ProfesionalService } from 'src/app/services/profesional.service';
 
 export class DashboardComponent implements OnInit {
   profesionales: any;
-  mostrarProfesionales: boolean=true;
+  mostrarProfesionales: boolean = true;
 
-  constructor(private profesionalService: ProfesionalService) {}
+  constructor(private profesionalService: ProfesionalService) { }
 
   ngOnInit(): void {
     this.recuperarProfesionales();
@@ -29,8 +29,6 @@ export class DashboardComponent implements OnInit {
       this.profesionales = resultado;
       this.recuperarProfesionales()
     })
-    };
-  
+  };
 
-  
 }
