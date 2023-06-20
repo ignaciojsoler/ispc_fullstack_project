@@ -12,6 +12,12 @@ import { RegistroComponent } from './registro/registro.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 import { SoporteComponent } from './soporte/soporte.component';
 import { ComponentsModule } from '../components/components.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardUserComponent } from './dashboard-user/dashboard-user.component';
+import { PerfilUserComponent } from './perfil-user/perfil-user.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { HistorialComponent } from './historial/historial.component';
 
 @NgModule({
   declarations: [ 
@@ -23,9 +29,14 @@ import { ComponentsModule } from '../components/components.module';
     PagosComponent,
     RegistroComponent,
     SobreNosotrosComponent,
-    SoporteComponent
+    SoporteComponent,
+    DashboardComponent,
+    DashboardUserComponent,
+    PerfilUserComponent,
+    CarritoComponent,
+    HistorialComponent
   ],
-  imports: [ ComponentsModule, AppRoutingModule, CommonModule ],
+  imports: [ ComponentsModule, AppRoutingModule, CommonModule, ReactiveFormsModule ],
   exports: [
     ContactoComponent,
     DatosPrestadorComponent,
@@ -35,7 +46,10 @@ import { ComponentsModule } from '../components/components.module';
     PagosComponent,
     RegistroComponent,
     SobreNosotrosComponent,
-    SoporteComponent
+    SoporteComponent,
+    DashboardComponent,
+    DashboardUserComponent,
+    PerfilUserComponent
   ],
 })
 

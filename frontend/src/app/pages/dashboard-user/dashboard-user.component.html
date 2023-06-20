@@ -1,0 +1,370 @@
+<main class="hacia-abajo">
+  <div class="titulo">
+    <h2>Administrador</h2>
+  </div>
+
+  <div class="container">
+    <div class="row flex-lg-nowrap">
+      <div class="col-12 col-lg-auto mb-3" style="width: 250px;">
+        <div class="card p-3">
+          <div class="e-navlist e-navlist--active-bg">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link px-2" routerLink="/dashboard"><i class="fa fa-fw fa-th mr-1"></i><span> CRUD</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-2" routerLink="/dashboard-user"><i class="fa fa-fw fa-cog mr-1"></i><span> Configuración</span></a>
+              </li>
+            </ul>
+          </div>
+        </div> <br>
+
+        <div class="card">
+          <div class="card-body">
+            <div class="text-center px-xl-3">
+              <button class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#user-form-modal">Agregar nuevo</button>
+            </div>
+            <hr class="my-3">
+            <div class="e-navlist e-navlist--active-bold">
+              <ul class="nav">
+                <li class="nav-item active">
+                  <a href="#" class="nav-link"><span>Todos</span>&nbsp;<small>/&nbsp;32</small></a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link"><span>Activos</span>&nbsp;<small>/&nbsp;16</small></a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link"><span>Seleccionados</span>&nbsp;<small>/&nbsp;0</small></a>
+                </li>
+              </ul>
+            </div>
+            <hr class="my-3">
+            <div>
+              <div class="form-group">
+                <label>Desde fecha - hasta:</label>
+                <div>
+                  <input id="dates-range" class="form-control flatpickr-input" placeholder="11 Dic 21 - 24 May 23" type="text" readonly="readonly">
+                </div>
+              </div> <br>
+              <div class="form-group">
+                <label>Buscar por nombre:</label>
+                <div><input class="form-control w-100" type="text" placeholder="Nombre" value=""></div>
+              </div>
+            </div>
+            <hr class="my-3">
+            <div class="">
+              <label>Estado:</label>
+              <div class="px-2">
+                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" name="user-status" id="users-status-disabled">
+                  <label class="custom-control-label" for="users-status-disabled">Inactivo</label>
+                </div>
+              </div>
+              <div class="px-2">
+                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" name="user-status" id="users-status-active">
+                  <label class="custom-control-label" for="users-status-active">Activo</label>
+                </div>
+              </div>
+              <div class="px-2">
+                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" name="user-status" id="users-status-any" checked="">
+                  <label class="custom-control-label" for="users-status-any">Todos</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+   
+      <div class="col">
+        <div class="row">
+          <div class="col mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="e-profile">
+                  <div class="row">
+                    <div class="col-12 col-sm-auto mb-3">
+                      <div class="mx-auto" style="width: 140px;">
+                        <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
+                          <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                      <div class="text-center text-sm-left mb-2 mb-sm-0">
+                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">Juan Perez</h4>
+                        <div class="text-muted"><small>Última conexión hace 2 horas</small></div>
+                        <div class="mt-2">
+                          <button class="btn-sm btn-secondary" type="button">
+                            <i class="fa fa-fw fa-camera"></i>
+                            <span> Cambiar foto</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="text-center text-sm-right">
+                        <div class="text-muted"><small>Se unió el 09 de Dic de 2017</small></div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item"><a href="" class="active nav-link">Preferencias</a></li>
+                  </ul>
+                  <div class="tab-content pt-3">
+                    <div class="tab-pane active">
+                      <form class="form" novalidate="">
+                        <!-- Config personal -->
+                        <div class="row">
+                          <div class="col">
+                            <div class="my-3"><b>Información personal</b></div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Nombre</label>
+                                  <input class="form-control" type="text" name="nombre" placeholder="Juan" value="Juan">
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Apellido</label>
+                                  <input class="form-control" type="text" name="apellido" placeholder="Perez" value="Perez">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-12 col-sm-6 mb-3">
+                                <div class="form-group">
+                                  <label>Email</label>
+                                  <input class="form-control" type="text" placeholder="usuario@wefix.com">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Tipo de usuario</label>
+                                  <input class="form-control" type="text" name="profesional" placeholder="Profesional">
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Estado membresía</label>
+                                  <input class="form-control" type="text" name="membresia" placeholder="Activa">
+                                </div>
+                              </div>                         
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Profesión</label>
+                                  <input class="form-control" type="text" name="profesion" placeholder="Plomero">
+                                </div>
+                              </div>  
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Matrícula</label>
+                                  <input class="form-control" type="text" name="matricula" placeholder="358441">
+                                </div>
+                              </div> 
+                            </div>
+                            <div class="row">
+                              <div class="col-12 col-sm-6 mb-3">
+                                <div class="form-group">
+                                  <label>Descripción</label>
+                                  <textarea class="form-control" rows="3" placeholder="Aquí va la descripción sobre la labol del profesional"></textarea>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Teléfono</label>
+                                  <input class="form-control" type="number" name="telefono" placeholder="155-011899">
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Dirección</label>
+                                  <input class="form-control" type="text" name="direccion" placeholder="Av Rivadavia 756">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Ciudad</label>
+                                  <input class="form-control" type="text" name="ciudad" placeholder="Córdoba">
+                                </div>
+                              </div>
+                              <div class="col mb-3">
+                                <div class="form-group">
+                                  <label>Provincia</label>
+                                  <input class="form-control" type="text" name="provincia" placeholder="Córdoba">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <br><hr>
+
+                        <!-- Config contraseña -->
+                        <div class="row">
+                          <div class="col-12 col-sm-6 mb-3">
+                            <div class="my-3"><b>Cambiar contraseña</b></div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Contraseña anterior</label>
+                                  <input class="form-control" type="password" placeholder="••••••">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Nueva contraseña</label>
+                                  <input class="form-control" type="password" placeholder="••••••">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col mb-3">
+                                <div class="form-group">
+                                  <label>Confirmar <span class="d-none d-xl-inline">Contraseña</span></label>
+                                  <input class="form-control" type="password" placeholder="••••••"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-5 offset-sm-1 mb-3">
+                            <div class="my-3"><b>Recibir notificaciones</b></div>
+                            <div class="row">
+                              <div class="col">
+                                <label>Notificaciones en tu Email</label>
+                                <div class="custom-controls-stacked px-2">
+                                  <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="novedades" checked="">
+                                    <label class="custom-control-label" for="novedades">Novedades</label>
+                                  </div>
+                                  <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="notifications-offers" checked="">
+                                    <label class="custom-control-label" for="descuentos">Descuetos</label>
+                                  </div>
+                                  <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="notifications-news" checked="">
+                                    <label class="custom-control-label" for="ofertas-laboralaes">Ofertas laborales</label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- Config tarjeta -->
+                        <div class="row">
+                          <div class="col content-panel"></div>
+                          <div class="my-3"><b>Datos de facturación</b>
+                            <div class="billing">
+                              <div class="secure text-center margin-bottom-md">
+                                <div class="accepted-cards my-3">
+                                  <ul class="list-inline d-flex justify-content-center">
+                                    <li><img src="/assets/img/visa-32px.png" alt="Visa"></li>
+                                    <li><img src="/assets/img/mastercard-32px.png" alt="MasterCard"></li>
+                                    <li><img src="/assets/img/maestro-32px.png" alt="Maestro"></li>
+                                    <li><img src="/assets/img/american-express-32px.png" alt="American Express"></li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <form id="billing" class="form-horizontal" method="post" action="#" role="form">
+                                <div class="form-group">
+                                  <label class="control-label">Nombre del titular</label>
+                                  <div class="col-12 col-sm-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Nombre titular">
+                                    <p class="help-block">Como aparece en la tarjeta.</p>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label">Número de tarjeta</label>
+                                  <div class="col-12 col-sm-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="••••  ••••  ••••  ••••">
+                                    <p class="help-block">Los 16 dígitos que aparecen en su tarjeta de crédito.</p>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="form-group">
+                                      <label class="control-label">Fecha de vencimiento</label>
+                                      <div class=" form-inline">
+                                        <div class="d-flex col-sm-9">
+                                          <select class="form-control" style="width: 120px">
+                                            <option value="01">01</option>
+                                            <option value="01">02</option>
+                                            <option value="01">03</option>
+                                            <option value="01">04</option>
+                                            <option value="01">05</option>
+                                            <option value="01">06</option>
+                                            <option value="01">07</option>
+                                            <option value="01">08</option>
+                                            <option value="01">09</option>
+                                            <option value="01">10</option>
+                                            <option value="01">11</option>
+                                            <option value="01">12</option>
+                                          </select>
+                                          <span class="divider mx-4">/</span>
+                                          <select class="form-control" style="width: 120px">
+                                            <option value="01">2023</option>
+                                            <option value="01">2024</option>
+                                            <option value="01">2025</option>
+                                            <option value="01">2026</option>
+                                          </select>
+                                        </div>
+                                        <p class="help-block">La fecha de vencimiento de su tarjeta que encuentra en el frente de la misma.</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                    <div class="form-group">
+                                      <label class="control-label">Código de seguridad</label>
+                                      <div class="col-sm-9">
+                                        <input type="text" class="form-control" style="width: 120px;" placeholder="CVC">
+                                      </div>
+                                      <p class="help-block">Los últimos 3 dígitos que aparecen en el reverso de su tarjeta.</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="action-wrapper text-center">
+                                  <h5 class="notes margin-bottom-sm">
+                                      Se cargarán en su tarjeta <span class="text-stronger">$499/mes + IVA</span> 
+                                  </h5>
+                                  <div class="action-btn">
+                                    <button class="btn btn-success">Pagar
+                                      <i class="fa fa-chevron-right"></i>
+                                    </button>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                          <div class="col d-flex justify-content-end my-3">
+                            <button class="btn btn-primary" type="submit">Guardar cambios</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

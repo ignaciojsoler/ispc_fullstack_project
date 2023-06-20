@@ -1,4 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+
+class CustomUser(AbstractUser):
+    email = models.EmailField(max_length=150, unique=True)
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username', 'password']
+    class Meta:
+        db_table = 'WeFix_customuser'
 
 class Profesion(models.Model):
     nombre = models.CharField(max_length=100)
@@ -26,7 +34,6 @@ class Cliente(models.Model):
     direccion = models.CharField(max_length=100)
     ciudad = models.CharField(max_length=100)
     provincia = models.CharField(max_length=100)
-    pais = models.CharField(max_length=100)
 
     def __str__(self):
         return f"{self.nombre} {self.apellido}"
@@ -44,6 +51,13 @@ class Trabajador(models.Model):
     tipo_usuario = models.ForeignKey(TipoUsuario, on_delete=models.CASCADE)
     profesion = models.ForeignKey(Profesion, on_delete=models.CASCADE)
     descripcion = models.TextField()
+    telefono = models.CharField(max_length=100)
+    direccion = models.CharField(max_length=100)
+    ciudad = models.CharField(max_length=100)
+    provincia = models.CharField(max_length=100)
+    matricula = models.CharField(max_length=20)
+    rating = models.DecimalField(max_digits=1, decimal_places=1)
+    imagen = models.ImageField(blank=True, null=True)
     precio_hora = models.DecimalField(max_digits=8, decimal_places=2)
     estado_membresia = models.BooleanField(default=False)
 
@@ -54,3 +68,4 @@ class Trabajador(models.Model):
         verbose_name_plural = "Trabajadores"
         db_table = "trabajador"
         verbose_name = "Información del trabajador"
+

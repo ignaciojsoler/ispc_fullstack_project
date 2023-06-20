@@ -1,58 +1,40 @@
- <p class="text-primary">header works!</p>
-<!--
-<br />
-<a routerLink="contacto">contacto</a><br />
-<a routerLink="home">home</a><br />
-<a routerLink="sobre_nosotros">sobre nosotros</a><br />
-<a routerLink="contacto">contacto</a>
-<a routerLink="login">login</a>
-<a routerLink="registro_prestador">registro prestador</a> -->
-
 <header>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg text-white navbar-dark fixed-top">
-    <div class="container-fluid d-flex justify-content-between flex-lg-row-reverse">
-      <!-- Menú izquierda -->
-      <button class="navbar-toggler"
-        type="button" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#navbarSupportedContent" 
-        aria-controls="navbarSupportedContent" 
-        aria-expanded="false" 
+    <div class="container-fluid d-flex justify-content-between flex-lg-row">
+      <button 
+        class="navbar-toggler" 
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
         aria-label="Toggle navigation"
-      >
-      <span class="navbar-toggler-icon"></span>
-        
-      </button>
-      <div class="dropdown relative position-relative top-0">
-        <a class="dropdown-toggle d-flex align-items-center hidden-arrow" 
-          href="#" 
-          id="navbarDropdownMenuAvatar" 
-          role="button" 
-          data-bs-toggle="dropdown" 
-          aria-expanded="false" 
         >
-          <img src="./assets/img/avatar naranja.png" height="30" alt="avatar_login" loading="lazy"/>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end"   aria-labelledby="navbarDropdownMenuAvatar">
-          <li><a class="dropdown-item" routerLink="login">Ingresar</a></li>
-          <li><a class="dropdown-item" href="#">Mi perfil</a></li>
-          <li><a class="dropdown-item" href="#">Configuración</a></li>
-          <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
-        </ul>
-      </div>
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <!-- Menú derecha -->
+      <!-- Collapsible wrapper -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="d-flex align-items-center">
           <a class="navbar-brand mt-2 mt-lg-0" href="#">
-          <img class="logo" src="./assets/img/Logotipo.png" alt="we-fix-logo" height="50" loading="lazy"/>
+            <img
+              class="logo"
+              src="./assets/img/Logotipo.png"
+              alt="we-fix-logo"
+              height="50"
+              loading="lazy"
+            />
           </a>
           <h1 class="navbar-brand fw-bold fs-2 m-0">WE FIX</h1>
         </div>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-3">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="home">Inicio</a>
+            <a class="nav-link active" 
+              aria-current="page" 
+              routerLink="home"
+              >Inicio</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="sobre_nosotros">Nosotros</a>
@@ -64,10 +46,45 @@
             <a class="nav-link" routerLink="registro">Registro</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="login">Ingresar</a>
+            <a class="nav-link" 
+            routerLink="login">Ingresar</a>
           </li>
         </ul>
       </div>
+
+      <!-- Avatar -->
+      <a class="text-reset me-3" routerLink="/carrito">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+      <div class="dropdown">
+        <a 
+          class="dropdown-toggle d-flex align-items-center hidden-arrow" 
+          href="#" id="navbarDropdownMenuAvatar"
+          role="button" 
+          data-bs-toggle="dropdown" 
+          aria-expanded="false">
+          <img 
+            src="./assets/img/avatar naranja.png" 
+            height="30"
+            alt="avatar_login"
+            loading="lazy"
+          />
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+          <li>
+            <a class="dropdown-item" routerLink="/login">Ingresar</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="/dashboard-user">Mi perfil</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="/dashboard">Configuración</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="/home">Cerrar Sesión</a>
+          </li>
+        </ul>
+      </div> 
     </div>
   </nav>
-</header>
+</header> 
