@@ -5,7 +5,14 @@ import { Component, Input } from '@angular/core';
   templateUrl: './dashboard-user-item.component.html',
   styleUrls: ['./dashboard-user-item.component.css']
 })
+
+
 export class DashboardUserItemComponent {
+  editingId: number | null = null;
+
+  onEditProfesional(profesionalId: number) {
+    this.editingId = profesionalId;
+  }
   @Input() id: string = '';
   @Input() imagen: string = '';
   @Input() nombre: string = '';

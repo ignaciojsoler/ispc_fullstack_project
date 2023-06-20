@@ -10,15 +10,12 @@
           <div class="e-navlist e-navlist--active-bg">
             <ul class="nav">
               <li class="nav-item">
-                <a class="nav-link px-2" routerLink="/dashboard"
-                  ><i class="fa fa-fw fa-th mr-1"></i><span> CRUD</span></a
-                >
+                <a class="nav-link px-2" routerLink="/dashboard"><i class="fa fa-fw fa-th mr-1"></i><span>
+                    CRUD</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link px-2" routerLink="/dashboard-user"
-                  ><i class="fa fa-fw fa-cog mr-1"></i
-                  ><span> Configuración</span></a
-                >
+                <a class="nav-link px-2" routerLink="/dashboard-user"><i class="fa fa-fw fa-cog mr-1"></i><span>
+                    Configuración</span></a>
               </li>
             </ul>
           </div>
@@ -28,9 +25,7 @@
       <div class="col">
         <div class="mb-3">
           <div class="overflow-hidden card table-nowrap table-card">
-            <div
-              class="card-header d-flex justify-content-between align-items-center"
-            >
+            <div class="card-header d-flex justify-content-between align-items-center">
               <h5 class="mb-0">Usuarios</h5>
               <div>
                 <button type="button" class="btn btn-outline-primary">
@@ -44,23 +39,14 @@
                 <thead class="small text-uppercase bg-body text-muted">
                   <tr>
                     <th class="align-top">
-                      <div
-                        class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0"
-                      >
-                        <input
-                          type="checkbox"
-                          class="custom-control-input"
-                          id="all-items"
-                        />
-                        <label
-                          class="custom-control-label"
-                          for="all-items"
-                        ></label>
+                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0">
+                        <input type="checkbox" class="custom-control-input" id="all-items" />
+                        <label class="custom-control-label" for="all-items"></label>
                       </div>
                     </th>
                     <th></th>
                     <th>Email</th>
-                    <th>Tipo usuario</th>
+                    <th>Teléfono</th>
                     <th>Nombre y Apellido</th>
                     <th>Raking</th>
                     <th>Fecha alta</th>
@@ -69,78 +55,88 @@
                   </tr>
                 </thead>
                 <tbody *ngFor="let profesional of profesionales">
-                  <app-dashboard-user-item
-                  [id]="profesional.id"
-                  [imagen]="profesional.imagen"
-                  [nombre]="profesional.nombre"
-                  [apellido]="profesional.apellido"
-                  [descripcion]="profesional.descripcion"
-                  [profesion]="profesional.profesion"
-                  [ranking]="profesional.ranking"
-                  [email]="profesional.email"
-                  />
-                  <tr>
-                    <td>
-                      <div
-                        class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top"
-                      >
-                        <input
-                          type="checkbox"
-                          class="custom-control-input"
-                          id="item-1"
-                        />
-                        <label
-                          class="custom-control-label"
-                          for="item-1"
-                        ></label>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <img
-                          src="{{ profesional.imagen }}"
-                          class="avatar sm rounded-pill me-3 flex-shrink-0"
-                          alt="Customer"
-                        />
-                      </div>
-                    </td>
-                    <td>{{ profesional.email }}</td>
-                    <td>CLI / PROF</td>
-                    <td>
-                      <div class="h6 mb-0 lh-1">
-                        {{ profesional.nombre }} {{ profesional.apellido }}
-                      </div>
-                    </td>
-                    <td align="center">{{ profesional.ranking }}</td>
-                    <td align="center">XX/XX/XXXX</td>
-                    <td class="text-center align-middle">
-                      <i
-                        class="fa fa-lg text-secondary cursor-pointer fa-toggle-on"
-                      ></i>
-                    </td>
-                    <td class="text-center align-middle">
-                      <div class="btn-group align-top">
-                        <button
-                          class="btn btn-sm btn-outline-secondary"
-                          type="button"
-                          data-toggle="modal"
-                          data-target="#user-form-modal"
-                        >
-                          Edit
-                        </button>
-                        <button
-                          class="btn btn-sm btn-outline-secondary"
-                          type="button"
-                        >
-                          <i
-                            class="fa fa-trash"
-                            (click)="borrarProfesional(profesional.id)"
-                          ></i>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                
+                  <ng-container *ngIf="profesional.id !== editingId; else editMode">
+                    <tr>
+                      <td>
+                        <div
+                          class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                          <input type="checkbox" class="custom-control-input" id="item-1" />
+                          <label class="custom-control-label" for="item-1"></label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img src="{{ profesional.imagen }}" class="avatar sm rounded-pill me-3 flex-shrink-0"
+                            alt="Customer" />
+                        </div>
+                      </td>
+                      <td>{{ profesional.email }}</td>
+                      <td>CLI / PROF</td>
+                      <td>
+                        <div class="h6 mb-0 lh-1">
+                          {{ profesional.nombre }} {{ profesional.apellido }}
+                        </div>
+                      </td>
+                      <td align="center">{{ profesional.ranking }}</td>
+                      <td align="center">XX/XX/XXXX</td>
+                      <td class="text-center align-middle">
+                        <i class="fa fa-lg text-secondary cursor-pointer fa-toggle-on"></i>
+                      </td>
+                      <td class="text-center align-middle">
+                        <div class="btn-group align-top">
+                          <button class="btn btn-sm btn-outline-secondary" type="button" data-toggle="modal"
+                            data-target="#user-form-modal" (click)="onEditProfesional(profesional.id)">
+                            Editar
+                          </button>
+                          <button class="btn btn-sm btn-outline-secondary" type="button">
+                            <i class="fa fa-trash" (click)="borrarProfesional(profesional.id)"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </ng-container>
+                  <ng-template #editMode>
+                    <tr>
+                      <td>
+                        <div
+                          class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                          <input type="checkbox" class="custom-control-input" id="item-1" />
+                          <label class="custom-control-label" for="item-1"></label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img src="{{ profesional.imagen }}" class="avatar sm rounded-pill me-3 flex-shrink-0"
+                            alt="Customer" />
+                        </div>
+                      </td>
+                      <td> <input type="text" [(ngModel)]="profesional.email" /></td>
+                      <td><input type="text" [(ngModel)]="profesional.telefono" /></td>
+                      <td>
+                        <input type="text" [(ngModel)]="profesional.nombre" />
+                        <input type="text" [(ngModel)]="profesional.apellido" />
+                      </td>
+                      <td align="center">{{ profesional.ranking }}</td>
+                      <td align="center">XX/XX/XXXX</td>
+                      <td class="text-center align-middle">
+                        <i class="fa fa-lg text-secondary cursor-pointer fa-toggle-on"></i>
+                      </td>
+                      <td class="text-center align-middle">
+                        <div class="btn-group align-top">
+                          <button class="btn btn-sm btn-outline-secondary" type="button" data-toggle="modal"
+                            data-target="#user-form-modal" (click)="onEditProfesional(profesional.id)">
+                            Editar
+                          </button>
+                          <button class="btn btn-sm btn-outline-secondary" type="button">
+                            <i class="fa fa-trash" (click)="borrarProfesional(profesional.id)"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <!--aasdasd-->
+
+                  </ng-template>
+
                 </tbody>
               </table>
             </div>

@@ -59,3 +59,7 @@ table th {
   font-weight: 600;
   background-color: #eeecfd !important;
 }
+
+input {
+  width: 100px;
+}

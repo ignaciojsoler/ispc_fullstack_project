@@ -12,7 +12,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 import { SoporteComponent } from './soporte/soporte.component';
 import { ComponentsModule } from '../components/components.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardUserComponent } from './dashboard-user/dashboard-user.component';
 import { PerfilUserComponent } from './perfil-user/perfil-user.component';
@@ -30,9 +30,10 @@ import { PerfilUserComponent } from './perfil-user/perfil-user.component';
     SoporteComponent,
     DashboardComponent,
     DashboardUserComponent,
-    PerfilUserComponent
+    PerfilUserComponent,
+    
   ],
-  imports: [ ComponentsModule, AppRoutingModule, CommonModule, ReactiveFormsModule ],
+  imports: [ ComponentsModule, AppRoutingModule, CommonModule, ReactiveFormsModule, FormsModule ],
   exports: [
     ContactoComponent,
     DatosPrestadorComponent,
@@ -45,7 +46,8 @@ import { PerfilUserComponent } from './perfil-user/perfil-user.component';
     SoporteComponent,
     DashboardComponent,
     DashboardUserComponent,
-    PerfilUserComponent
+    PerfilUserComponent,
+    FormsModule
   ],
 })
 

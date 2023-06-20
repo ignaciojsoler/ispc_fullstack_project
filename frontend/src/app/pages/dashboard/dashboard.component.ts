@@ -8,6 +8,8 @@ import { ProfesionalService } from 'src/app/services/profesional.service';
 })
 
 export class DashboardComponent implements OnInit {
+  editingId: number | null = null;
+
   profesionales: any;
   mostrarProfesionales: boolean = true;
 
@@ -30,5 +32,10 @@ export class DashboardComponent implements OnInit {
       this.recuperarProfesionales()
     })
   };
+
+  onEditProfesional(profesionalId: number) {
+    if (this.editingId !== profesionalId ) this.editingId = profesionalId;
+    else if (this.editingId === profesionalId) this.editingId = null
+  }
 
 }
