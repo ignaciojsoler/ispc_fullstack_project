@@ -101,6 +101,13 @@ body {
   background-color: var(--main-blue);
 }
 
+.ng-valid:not(form).ng-touched {
+  border-left: 5px solid #42A948; /*green*/
+}
+.ng-invalid:not(form).ng-touched {
+  border-left: 5px solid #a94442; /*red*/
+}
+
 /* placas precio: */
 
 .pricing-plan {
