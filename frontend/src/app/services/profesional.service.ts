@@ -9,4 +9,7 @@ export class ProfesionalService {
   obtener() {
     return this.http.get('http://localhost:3000/trabajadores');
   }
+  borrar(id: string) {
+    return this.http.delete(`http://localhost:3000/trabajadores/${id}`);
+  }
 }

@@ -5,7 +5,8 @@ class CustomUser(AbstractUser):
     email = models.EmailField(max_length=150, unique=True)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'password']
-
+    class Meta:
+        db_table = 'WeFix_customuser'
 
 class Profesion(models.Model):
     nombre = models.CharField(max_length=100)
@@ -67,3 +68,4 @@ class Trabajador(models.Model):
         verbose_name_plural = "Trabajadores"
         db_table = "trabajador"
         verbose_name = "Información del trabajador"
+
