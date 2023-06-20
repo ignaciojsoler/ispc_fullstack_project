@@ -1,0 +1,61 @@
+<tr class="align-middle">
+    <td class="align-middle">
+      <div
+        class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top"
+      >
+        <input
+          type="checkbox"
+          class="custom-control-input"
+          id="item-1"
+        />
+        <label
+          class="custom-control-label"
+          for="item-1"
+        ></label>
+      </div>
+    </td>
+    <td>
+      <div class="d-flex align-items-center">
+        <img
+          src="{{ imagen }}"
+          class="avatar sm rounded-pill me-3 flex-shrink-0"
+          alt="Customer"
+        />
+      </div>
+    </td>
+    <td>{{ email }}</td>
+    <td>CLI / PROF</td>
+    <td>
+      <div class="h6 mb-0 lh-1">
+        {{ nombre }} {{ apellido }}
+      </div>
+    </td>
+    <td align="center">{{ ranking }}</td>
+    <td align="center">XX/XX/XXXX</td>
+    <td class="text-center align-middle">
+      <i
+        class="fa fa-lg text-secondary cursor-pointer fa-toggle-on"
+      ></i>
+    </td>
+    <td class="text-center align-middle">
+      <div class="btn-group align-top">
+        <button
+          class="btn btn-sm btn-outline-secondary"
+          type="button"
+          data-toggle="modal"
+          data-target="#user-form-modal"
+        >
+          Edit
+        </button>
+        <button
+          class="btn btn-sm btn-outline-secondary"
+          type="button"
+        >
+          <i
+            class="fa fa-trash"
+            (click)="borrarProfesional(id)"
+          ></i>
+        </button>
+      </div>
+    </td>
+  </tr>

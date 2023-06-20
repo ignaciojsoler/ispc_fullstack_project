@@ -5,13 +5,21 @@
 
   <div class="container">
     <div class="row flex-lg-nowrap">
-      <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
+      <div class="col-12 col-lg-auto mb-3" style="width: 200px">
         <div class="card p-3">
           <div class="e-navlist e-navlist--active-bg">
             <ul class="nav">
-              
-              <li class="nav-item"><a class="nav-link px-2" routerLink="/dashboard"><i class="fa fa-fw fa-th mr-1"></i><span> CRUD</span></a></li>
-              <li class="nav-item"><a class="nav-link px-2" routerLink="/dashboard-user"><i class="fa fa-fw fa-cog mr-1"></i><span> Configuración</span></a></li>
+              <li class="nav-item">
+                <a class="nav-link px-2" routerLink="/dashboard"
+                  ><i class="fa fa-fw fa-th mr-1"></i><span> CRUD</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-2" routerLink="/dashboard-user"
+                  ><i class="fa fa-fw fa-cog mr-1"></i
+                  ><span> Configuración</span></a
+                >
+              </li>
             </ul>
           </div>
         </div>
@@ -20,21 +28,34 @@
       <div class="col">
         <div class="mb-3">
           <div class="overflow-hidden card table-nowrap table-card">
-            <div class="card-header d-flex justify-content-between align-items-center">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
               <h5 class="mb-0">Usuarios</h5>
               <div>
-                <button type="button" class="btn btn-outline-primary">Agregar nuevo</button>
-                <a href="#!" class="btn btn-light btn-sm ">View All</a>
+                <button type="button" class="btn btn-outline-primary">
+                  Agregar nuevo
+                </button>
+                <a href="#!" class="btn btn-light btn-sm">View All</a>
               </div>
             </div>
-            <div class="table-responsive" >
+            <div class="table-responsive">
               <table class="table mb-0" *ngIf="mostrarProfesionales">
                 <thead class="small text-uppercase bg-body text-muted">
                   <tr>
                     <th class="align-top">
-                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0">
-                        <input type="checkbox" class="custom-control-input" id="all-items">
-                        <label class="custom-control-label" for="all-items"></label>
+                      <div
+                        class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0"
+                      >
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="all-items"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="all-items"
+                        ></label>
                       </div>
                     </th>
                     <th></th>
@@ -48,131 +69,16 @@
                   </tr>
                 </thead>
                 <tbody *ngFor="let profesional of profesionales">
-                  <tr class="align-middle">
-                    <td class="align-middle">
-                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                        <input type="checkbox" class="custom-control-input" id="item-1">
-                        <label class="custom-control-label" for="item-1"></label>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <img
-                          src= "{{ profesional.imagen }}"
-                          class="avatar sm rounded-pill me-3 flex-shrink-0"
-                          alt="Customer"
-                        />
-                      </div>
-                    </td>
-                    <td>{{ profesional.email }}</td>
-                    <td>CLI / PROF</td>
-                    <td>
-                      <div class="h6 mb-0 lh-1">{{ profesional.nombre }} {{ profesional.apellido }}</div>
-                    </td>
-                    <td align="center">{{ profesional.ranking }}</td>
-                    <td align="center"> XX/XX/XXXX</td>
-                    <td class="text-center align-middle"><i class="fa fa-lg text-secondary cursor-pointer fa-toggle-on"></i></td>
-                    <td class="text-center align-middle">
-                      <div class="btn-group align-top">
-                          <button class="btn btn-sm btn-outline-secondary " type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
-                          <button class="btn btn-sm btn-outline-secondary " type="button"><i class="fa fa-trash"
-                            (click)="borrarProfesional(profesional.id)"
-                            ></i></button>
-                      </div>
-                    </td>
-                   
-                  <!-- </tr>
-                  <tr class="align-middle">
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <img
-                          src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                          class="avatar sm rounded-pill me-3 flex-shrink-0"
-                          alt="Customer"
-                        />
-                        <div>
-                          <div class="h6 mb-0 lh-1">Topias Kantola</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>topiaskantola@email.com</td>
-                    <td><span class="d-inline-block align-middle">Brazil</span></td>
-                    <td><span>****@mail.com</span></td>
-                    <td>21 Sep, 2021</td>
-                    <td class="text-end">
-                      <div class="drodown">
-                        <a data-bs-toggle="dropdown" href="#" class="btn p-1">
-                          <i class="fa fa-bars" aria-hidden="true"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end">
-                          <a href="#!" class="dropdown-item">View Details</a>
-                          <a href="#!" class="dropdown-item">Delete user</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr class="align-middle">
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <img
-                          src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                          class="avatar sm rounded-pill me-3 flex-shrink-0"
-                          alt="Customer"
-                        />
-                        <div>
-                          <div class="h6 mb-0 lh-1">Anaiah Whitten</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>anaiahwhitten@email.com</td>
-                    <td>
-                      <span class="d-inline-block align-middle">Poland</span>
-                    </td>
-                    <td><span>****0014</span></td>
-                    <td>12 June, 2021</td>
-                    <td class="text-end">
-                      <div class="drodown">
-                        <a data-bs-toggle="dropdown" href="#" class="btn p-1">
-                          <i class="fa fa-bars" aria-hidden="true"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end">
-                          <a href="#!" class="dropdown-item">View Details</a>
-                          <a href="#!" class="dropdown-item">Delete user</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr class="align-middle">
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <img
-                          src="https://bootdey.com/img/Content/avatar/avatar4.png"
-                          class="avatar sm rounded-pill me-3 flex-shrink-0"
-                          alt="Customer"
-                        />
-                        <div>
-                          <div class="h6 mb-0 lh-1">Wyatt Morris</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>wyattmorris@email.com</td>
-                    <td>
-                      <span class="d-inline-block align-middle">Kenya</span>
-                    </td>
-                    <td><span>****8715</span></td>
-                    <td>04 June, 2021</td>
-                    <td class="text-end">
-                      <div class="drodown">
-                        <a data-bs-toggle="dropdown" href="#" class="btn p-1">
-                          <i class="fa fa-bars" aria-hidden="true"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end">
-                          <a href="#!" class="dropdown-item">View Details</a>
-                          <a href="#!" class="dropdown-item">Delete user</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr> -->
+                  <app-dashboard-user
+                  [id]="profesional.id"
+                  [imagen]="profesional.imagen"
+                  [nombre]="profesional.nombre"
+                  [apellido]="profesional.apellido"
+                  [descripcion]="profesional.descripcion"
+                  [profesion]="profesional.profesion"
+                  [ranking]="profesional.ranking"
+                  [email]="profesional.email"
+                  />
                 </tbody>
               </table>
             </div>
@@ -180,8 +86,5 @@
         </div>
       </div>
     </div>
-  
-    
   </div>
 </main>
-

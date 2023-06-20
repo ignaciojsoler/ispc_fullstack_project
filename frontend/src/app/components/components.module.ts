@@ -5,12 +5,13 @@ import { CommonModule } from '@angular/common';
 import { ButtonComponent } from './button/button.component';
 import { InputComponent } from './input/input.component';
 import { CardPrestadorComponent } from './card-prestador/card-prestador.component';
+import { DashboardUserComponent } from './dashboard-user/dashboard-user.component';
 
 @NgModule({
   declarations: [ 
     ButtonComponent, 
     InputComponent, 
-    CardPrestadorComponent 
+    CardPrestadorComponent, DashboardUserComponent 
   ],
   imports: [
     CommonModule, AppRoutingModule
@@ -18,7 +19,8 @@ import { CardPrestadorComponent } from './card-prestador/card-prestador.componen
   exports: [ 
     ButtonComponent, 
     InputComponent, 
-    CardPrestadorComponent 
+    CardPrestadorComponent,
+    DashboardUserComponent
   ],
 })
 
