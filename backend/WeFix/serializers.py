@@ -19,6 +19,23 @@ class ProfesionalSerializer(serializers.ModelSerializer):
     class Meta:
         model = Trabajador
         fields = '__all__'
+        extra_kwargs = {
+            'nombre': {'required': True},
+            'apellido': {'required': True},
+            'email': {'required': True},
+            'password': {'required': True},
+            'tipo_usuario': 1,
+            'profesion': {'required': True},
+            'descripcion': {'required': True},
+            'telefono': {'required': True},
+            'direccion': {'required': True},
+            'ciudad': {'required': True},
+            'provincia': {'required': True},
+            'matricula': {'required': True},
+            'rating': {'required': True},
+            'precio_hora': {'required': True},
+            'estado_membresia': False,
+        }
         
 class ProfesionSerializer(serializers.ModelSerializer):
     class Meta:
