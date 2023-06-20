@@ -67,15 +67,19 @@ class VerProfesionales(generics.ListCreateAPIView):
 
 
 
-# class VerProfesiones(viewsets.ReadOnlyModelViewSet):
-#     permission_classes = [AllowAny] 
-#     def get(self, request, format=None):
-#         if Profesion.objects.all().exists():
-#             categories = Profesion.objects.all()
-#             serializer = ProfesionSerializer(categories, many=True)
-#             return Response({'categories': serializer.data}, status=status.HTTP_200_OK)
-#         else:
-#             return Response({'error': 'Categories Not Found'}, status=status.HTTP_404_NOT_FOUND)
+class VerProfesiones(generics.ListCreateAPIView):
+    queryset = Profesion.objects.all()
+    serializer_class = ProfesionSerializer
+    http_method_names = ['get']
+    permission_classes = [AllowAny]
+    
+    def list(self, request):
+        queryset = self.get_queryset()
+        serializer = ProfesionSerializer(queryset, many=True)
+        if serializer:
+            return Response(serializer.data)
+        else:
+            return Response({'error': 'Categories Not Found'}, status=status.HTTP_404_NOT_FOUND)
 
 # class AgregarProfesional(APIView):
 #     permission_classes = [IsAdminUser]

@@ -14,8 +14,8 @@ urlpatterns = [ # endpoints
   path('verProfesionales/',
     VerProfesionales.as_view(), name='verProfesionales'),
   
-  # path('verProfesiones/',
-  #   VerProfesiones.as_view(), name='verProfesiones'),
+  path('verProfesiones/',
+    VerProfesiones.as_view(), name='verProfesiones'),
   
   # path('user/verPerfil/',
   #   VerPerfil.as_view(), name='user_verPerfil'),
