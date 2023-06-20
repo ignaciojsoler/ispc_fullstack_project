@@ -20,8 +20,8 @@ urlpatterns = [ # endpoints
   # path('user/verPerfil/',
   #   VerPerfil.as_view(), name='user_verPerfil'),
   
-  # path('auth/AgregarProfesional/',
-  #   AgregarProfesional.as_view(), name='auth_agregarProfesional'),
+  path('agregarProfesional/',
+    AgregarProfesional.as_view(), name='auth_agregarProfesional'),
   # path('auth/ListarUsuarios/',
   #   ListarUsuarios.as_view(), name='auth_listarUsuarios'),
     

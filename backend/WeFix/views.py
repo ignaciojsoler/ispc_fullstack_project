@@ -81,15 +81,18 @@ class VerProfesiones(generics.ListCreateAPIView):
         else:
             return Response({'error': 'Categories Not Found'}, status=status.HTTP_404_NOT_FOUND)
 
-# class AgregarProfesional(APIView):
-#     permission_classes = [IsAdminUser]
-#     def post(self, request, format=None):
-#         serializer = ProfesionSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data,
-#                 status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+class AgregarProfesional(generics.CreateAPIView):
+    # permission_classes = [IsAdminUser]
+    permission_classes = [
+        permissions.AllowAny # Or anon users can't register
+    ]
+    def post(self, request, format=None):
+        serializer = ProfesionSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data,
+                status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 # class ListarUsuarios(generics.ListCreateAPIView):
 #     queryset = CustomUser.objects.all()
