@@ -51,28 +51,41 @@ class SignupView(generics.CreateAPIView):
 
 #CRUD:
 
-class VerProfesionales(viewsets.ReadOnlyModelViewSet):
-    permission_classes = [AllowAny] 
-    def get(self, request, format=None):
-        if Trabajador.objects.all().exists():
-            categories = Trabajador.objects.all()
-            serializer = ProfesionalSerializer(categories, many=True)
-            return Response({'categories': serializer.data}, status=status.HTTP_200_OK)
+class VerProfesionales(generics.ListCreateAPIView):
+    queryset = Trabajador.objects.all()
+    serializer_class = ProfesionalSerializer
+    http_method_names = ['get']
+    permission_classes = [AllowAny]
+    
+    def list(self, request):
+        queryset = self.get_queryset()
+        serializer = ProfesionalSerializer(queryset, many=True)
+        if serializer:
+            return Response(serializer.data)
         else:
             return Response({'error': 'Categories Not Found'}, status=status.HTTP_404_NOT_FOUND)
 
-class VerProfesiones(viewsets.ReadOnlyModelViewSet):
-    permission_classes = [AllowAny] 
-    def get(self, request, format=None):
-        if Profesion.objects.all().exists():
-            categories = Profesion.objects.all()
-            serializer = ProfesionSerializer(categories, many=True)
-            return Response({'categories': serializer.data}, status=status.HTTP_200_OK)
+
+
+class VerProfesiones(generics.ListCreateAPIView):
+    queryset = Profesion.objects.all()
+    serializer_class = ProfesionSerializer
+    http_method_names = ['get']
+    permission_classes = [AllowAny]
+    
+    def list(self, request):
+        queryset = self.get_queryset()
+        serializer = ProfesionSerializer(queryset, many=True)
+        if serializer:
+            return Response(serializer.data)
         else:
             return Response({'error': 'Categories Not Found'}, status=status.HTTP_404_NOT_FOUND)
 
-class AgregarProfesional(APIView):
-    permission_classes = [IsAdminUser]
+class AgregarProfesional(generics.CreateAPIView):
+    # permission_classes = [IsAdminUser]
+    permission_classes = [
+        permissions.AllowAny # Or anon users can't register
+    ]
     def post(self, request, format=None):
         serializer = ProfesionSerializer(data=request.data)
         if serializer.is_valid():
@@ -81,23 +94,23 @@ class AgregarProfesional(APIView):
                 status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class ListarUsuarios(generics.ListCreateAPIView):
-    queryset = CustomUser.objects.all()
-    serializer_class = UserSerializer
-    http_method_names = ['get']
-    permission_classes = [IsAdminUser]
-    def list(self, request):
-        queryset = self.get_queryset()
-        serializer = UserSerializer(queryset, many=True)
-        if self.request.user.is_authenticated:
-            return Response(serializer.data)
+# class ListarUsuarios(generics.ListCreateAPIView):
+#     queryset = CustomUser.objects.all()
+#     serializer_class = UserSerializer
+#     http_method_names = ['get']
+#     permission_classes = [IsAdminUser]
+#     def list(self, request):
+#         queryset = self.get_queryset()
+#         serializer = UserSerializer(queryset, many=True)
+#         if self.request.user.is_authenticated:
+#             return Response(serializer.data)
 
-# Ver y modificar el perfil (User):
-class VerPerfil(generics.RetrieveAPIView):
-    permission_classes = [IsAuthenticated]
-    serializer_class = UserSerializer
-    http_method_names = ['get', 'patch']
-    def get_object(self):
-        if self.request.user.is_authenticated:
-            return self.request.user
+# # Ver y modificar el perfil (User):
+# class VerPerfil(generics.RetrieveAPIView):
+#     permission_classes = [IsAuthenticated]
+#     serializer_class = UserSerializer
+#     http_method_names = ['get', 'patch']
+#     def get_object(self):
+#         if self.request.user.is_authenticated:
+#             return self.request.user
 
