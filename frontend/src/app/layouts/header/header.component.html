@@ -56,35 +56,9 @@
       <a class="text-reset me-3" routerLink="/carrito">
         <i class="fas fa-shopping-cart"></i>
       </a>
-      <div class="dropdown">
-        <a 
-          class="dropdown-toggle d-flex align-items-center hidden-arrow" 
-          href="#" id="navbarDropdownMenuAvatar"
-          role="button" 
-          data-bs-toggle="dropdown" 
-          aria-expanded="false">
-          <img 
-            src="./assets/img/avatar naranja.png" 
-            height="30"
-            alt="avatar_login"
-            loading="lazy"
-          />
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
-          <li>
-            <a class="dropdown-item" routerLink="/login">Ingresar</a>
-          </li>
-          <li>
-            <a class="dropdown-item" routerLink="/dashboard-user">Mi perfil</a>
-          </li>
-          <li>
-            <a class="dropdown-item" routerLink="/dashboard">Configuración</a>
-          </li>
-          <li>
-            <a class="dropdown-item" routerLink="/home">Cerrar Sesión</a>
-          </li>
-        </ul>
-      </div> 
+
+      <app-dropdown></app-dropdown>
+
     </div>
   </nav>
 </header> 
