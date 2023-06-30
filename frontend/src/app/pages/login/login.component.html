@@ -5,11 +5,13 @@
       <div class="login__logo">
         <img src="./assets/img/logo-index.png" alt="Logotipo de WeFix" />
       </div>
-      <h4 class="formulario_title">Ingresar</h4><br>
+      <h4 class="formulario_title">Ingresar</h4>
+      <br />
       <form
         class="formulario"
         name="formulario"
-        onsubmit="return validarForm()"
+        [formGroup]="loginForm"
+        (ngSubmit)="login()"
       >
         <label for="email" class="formulario__label"
           ><strong>CORREO ELECTRÓNICO</strong></label
@@ -17,50 +19,51 @@
         <input
           name="email"
           class="formulario__input input__email"
-          type="text" [formControl]="email"
+          type="text"
           placeholder="Correo electrónico"
+          formControlName="email"
         />
-
-        <div class="alert alert-danger" [hidden]="email.valid || email.pristine">
-          <span *ngIf="email.errors?.['required']">
-          El correo electónico es obligatorio
-        </span>
-
-        <span *ngIf="email.errors?.['email']">
-          El correo electrónico debe ser válido
-        </span>
-
+        <div
+          *ngIf="Email.invalid && (Email.dirty || Email.touched)"
+          class="text-danger"
+        >
+          <p *ngIf="Email.errors?.['required']">
+            El email es requerido.
+          </p>
+          <p *ngIf="Email.errors?.['email']">
+            El email debe ser válido.
+          </p>
         </div>
-
         <label for="password" class="formulario__label"
           ><strong>CONTRASEÑA</strong></label
         >
         <input
-          name="password" [formControl]="password"
+          name="password"
           class="formulario__input-password"
-          type="password" 
+          type="password"
           placeholder="Escribe tu contraseña"
+          formControlName="password"
         />
-
-        <div class="alert alert-danger" [hidden]="password.valid || password.pristine">
-         <span *ngIf="password?.hasError('required')">
-          La contraseña es obligatoria
-         </span>
-         <br>
-         <span *ngIf="password?.errors">
-          La contraseña debe tener 8 (ocho) caracteres
-         </span>
-
+        <div
+          *ngIf="Password.invalid && (Password.dirty || Password.touched)"
+          class="text-danger"
+        >
+          <p *ngIf="Password.errors?.['required']">
+            La contraseña es requerida.
+          </p>
+          <p *ngIf="Password?.errors?.['minlength']">
+            La contraseña debe tener al menos 8 dígitos.
+          </p>
         </div>
         <div class="formulario__captions">
           <label>
-            <input type="checkbox" checked="checked" name="remember" />
-            Recordar datos del usuario
+            <input type="checkbox" checked="checked" name="remember"/>
+              Recordar datos del usuario
           </label>
           <span><a href="#"> Olvidé mi contraseña</a></span>
         </div>
         <button type="submit" class="formulario__button">
-          <a routerLink="/home" class="text-decoration-none text-light">INICIAR SESIÓN</a>
+          <a class="text-decoration-none text-light">INICIAR SESIÓN</a>
         </button>
         <h5 class="formulario__registrarse">
           ¿Todavía no tenés una cuenta?
@@ -69,7 +72,6 @@
       </form>
     </div>
     <!--Imagen-->
-
     <img
       src="./assets/img/login-hero.png"
       alt="Imagen de un profesional"
