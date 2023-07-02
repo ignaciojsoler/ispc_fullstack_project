@@ -7,10 +7,11 @@
       <h4 class="formulario_title">
         <strong>Unite a nuestra comunidad ¡Registrate ahora!</strong>
       </h4>
-      <br/><br>
+      <br /><br />
 
-      <h4>Seleccione un Plan:</h4> <br>
-      <div class="container ">
+      <h4>Seleccione un Plan:</h4>
+      <br />
+      <div class="container">
         <div class="row gutters">
           <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
             <div class="pricing-plan">
@@ -29,7 +30,7 @@
               <button
                 type="submit"
                 class="formulario__button m-2"
-                [ngClass]="{ 'selected': user_type === 'cliente' }"
+                [ngClass]="{ selected: user_type === 'cliente' }"
                 (click)="setUserType('cliente')"
               >
                 Seleccionar Plan
@@ -53,7 +54,7 @@
               <button
                 type="submit"
                 class="formulario__button m-2"
-                [ngClass]="{ 'selected': user_type === 'trabajador' }"
+                [ngClass]="{ selected: user_type === 'trabajador' }"
                 (click)="setUserType('trabajador')"
               >
                 Seleccionar Plan
@@ -77,7 +78,7 @@
               <button
                 type="submit"
                 class="formulario__button m-2"
-                [ngClass]="{ 'selected': user_type === 'trabajador' }"
+                [ngClass]="{ selected: user_type === 'trabajador' }"
                 (click)="setUserType('trabajador')"
               >
                 Seleccionar Plan
@@ -88,163 +89,187 @@
         <p class="warning" id="warning"></p>
       </div>
       <br />
-      
-      <form class="formulario" id="form" (submit)="handleSubmit()">
+
+      <form
+        class="formulario"
+        id="form"
+        [formGroup]="signupForm"
+        (ngSubmit)="signup()"
+      >
         <label for="nombre" class="formulario__label">
           <strong>NOMBRE</strong>
-          </label
-        >
+        </label>
         <input
-          type="text" [formControl]="name"
+          type="text"
           placeholder="Ingresa un nombre"
-          name="name"
+          name="nombre"
           class="formulario__input"
           id="nombre"
+          formControlName="name"
         />
-        <div class="alert alert-danger mt-1" [hidden]="name.valid || name.pristine">
-          El nombre es obligatorio
-        </div>
+          <div *ngIf="Name.invalid && (Name.dirty || Name.touched)" class="text-danger">
+            <p *ngIf="Name.errors?.['required']">* El campo es obligatorio.</p>
+          </div> 
         <label for="nombre" class="formulario__label">
           <strong>APELLIDO</strong></label
         >
         <input
-          type="text" [formControl]="surname"
+          type="text"
           placeholder="Ingresa un apellido"
           name="apellido"
           class="formulario__input"
-          id="nombre"
+          id="apellido"
+          formControlName="surname"
         />
-        <div class="alert alert-danger mt-1" [hidden]="surname.valid || surname.pristine">
-          El apellido es obligatorio
-        </div>
-
+          <div *ngIf="Surname.invalid && (Surname.dirty || Surname.touched)" class="text-danger">
+            <p *ngIf="Surname.errors?.['required']">* El campo es obligatorio.</p>
+          </div>
         <label for="nombre" class="formulario__label">
           <strong>CORREO ELECTRÓNICO</strong></label
         >
         <input
-          type="email" [formControl]="email"
+          type="email"
           placeholder="Ingresa tu e-mail"
-          name="nombre"
+          name="email"
           class="formulario__input"
           id="email"
+          formControlName="email"
         />
-        <div class="alert alert-danger mt-1" [hidden]="email.valid || email.pristine">
-          <span *ngIf="email.errors?.['required']">
-            El email es obligatorio
-          </span>
-          <span *ngIf="email.errors?.['email']">
-            El email debe ser válido
-          </span>
-        </div>
+          <div
+            *ngIf="Email.invalid && (Email.dirty || Email.touched)"
+            class="text-danger"
+          >
+            <p *ngIf="Email.errors?.['required']">
+              * El email es requerido.
+            </p>
+            <p *ngIf="Email.errors?.['email']">
+              * El email debe ser válido.
+            </p>
+          </div>
         <label for="password" class="formulario__label">
           <strong>CONTRASEÑA</strong></label
         >
         <input
-          type="password" [formControl]="password"
+          type="password"
           placeholder="Escribe tu contraseña"
           name="password"
           class="formulario__input"
-          id="pass"
+          id="pass1"
+          formControlName="password"
         />
-        <div class="alert alert-danger mt-1" [hidden]="password.valid || password.pristine">
-          <span *ngIf="password?.hasError('required')">
-            La contraseña es obligatorio
-          </span>
-          <br>
-          <span *ngIf="password?.errors">
-            La contraseña debe tener 8 (ocho) o más caracteres
-          </span>
-        </div>
-        <label for="password" class="formulario__label">
+          <div
+            *ngIf="Password.invalid && (Password.dirty || Password.touched)"
+            class="text-danger"
+          >
+            <p *ngIf="Password.errors?.['required']">
+              * La contraseña es requerida.
+            </p>
+            <p *ngIf="Password?.errors?.['minlength']">
+              * La contraseña debe tener al menos 8 dígitos.
+            </p>
+          </div>
+        <label for="confirmpassword" class="formulario__label">
           <strong>CONFIRMA CONTRASEÑA</strong></label
         >
         <input
-          type="password" [formControl]="password"
+          type="password"
           placeholder="Repite tu contraseña"
-          name="password"
+          name="password2"
           class="formulario__input"
+          id="pass2"
+          formControlName="confirmpassword"
         />
-        <div class="alert alert-danger mt-1" [hidden]="repeatpassword.valid || repeatpassword.pristine">
-          <span *ngIf="repeatpassword?.hasError('rerequired')">
-           Repetir la contraseña es obligatorio
-          </span>
-          <br>
-          <span *ngIf="repeatpassword?.hasError('minlength')">
-            La contraseña debe tener 8 (ocho) o más caracteres
-          </span>
-        </div>
+          <div
+            *ngIf="Confirmpassword.invalid && (Confirmpassword.dirty || Confirmpassword.touched)"
+            class="text-danger"
+          >
+            <p *ngIf="Confirmpassword.errors?.['required']">
+              * La contraseña es requerida.
+            </p>
+            <p *ngIf="Confirmpassword?.errors?.['minlength']">
+              * La contraseña debe tener al menos 8 dígitos.
+            </p>
+          </div>
 
         <ng-container *ngIf="user_type === 'cliente'">
-            <label for="nombre" class="formulario__label">
-                <strong>DIRECCIÓN</strong></label
-              >
-              <input
-                type="text" [formControl]="address"
-                placeholder="Ingresa una dirección"
-                name="name"
-                class="formulario__input"
-                id="nombre"
-              />
-              <div class="alert alert-danger mt-1" [hidden]="address.valid || address.pristine">
-                La dirección es obligatorio
-              </div>
-              <label for="nombre" class="formulario__label">
-                <strong>CIUDAD</strong></label
-              >
-              <input
-                type="text" [formControl]="city"
-                placeholder="Ingresa una ciudad"
-                name="name"
-                class="formulario__input"
-                id="nombre"
-              />
-              <div class="alert alert-danger mt-1" [hidden]="city.valid || city.pristine">
-                La ciudad es obligatoria
-              </div>
-              <label for="nombre" class="formulario__label">
-                <strong>PROVINCIA</strong></label
-              >
-              <input
-                type="text" [formControl]="province"
-                placeholder="Ingresa una provincia"
-                name="name"
-                class="formulario__input"
-                id="nombre"
-              />
-              <div class="alert alert-danger mt-1" [hidden]="province.valid || province.pristine">
-                La provincia es obligatoria
-              </div>
+          <label for="nombre" class="formulario__label">
+            <strong>DIRECCIÓN</strong></label
+          >
+          <input
+            type="text"
+            placeholder="Ingresa una dirección"
+            name="direccion"
+            class="formulario__input"
+            id="direccion"
+            formControlName="address"
+          />
+            <div *ngIf="Address.invalid && (Address.dirty || Address.touched)" class="text-danger">
+              <p *ngIf="Address.errors?.['required']">* El campo es obligatorio.</p>
+            </div> 
+          <label for="nombre" class="formulario__label">
+            <strong>CIUDAD</strong></label
+          >
+          <input
+            type="text"
+            placeholder="Ingresa una ciudad"
+            name="ciudad"
+            class="formulario__input"
+            id="ciudad"
+            formControlName="city"
+          />
+            <div *ngIf="City.invalid && (City.dirty || City.touched)" class="text-danger">
+              <p *ngIf="City.errors?.['required']">* El campo es obligatorio.</p>
+            </div>
+          <label for="nombre" class="formulario__label">
+            <strong>PROVINCIA</strong></label
+          >
+          <input
+            type="text"
+            placeholder="Ingresa una provincia"
+            name="provincia"
+            class="formulario__input"
+            id="provincia"
+            formControlName="province"
+          />
+            <div *ngIf="Province.invalid && (Province.dirty || Province.touched)" class="text-danger">
+              <p *ngIf="Province.errors?.['required']">* El campo es obligatorio.</p>
+            </div>
         </ng-container>
 
         <ng-container *ngIf="user_type === 'trabajador'">
-            <label for="nombre" class="formulario__label">
-                <strong>PROFESIÓN</strong></label
-              >
-              <input
-                type="text" [formControl]="profession"
-                placeholder="Ingresa una profesión"
-                name="name"
-                class="formulario__input"
-                id="nombre"
-              />
-              <div class="alert alert-danger mt-1" [hidden]="profession.valid || profession.pristine">
-                La profesión es obligatoria
-              </div>
-              <label for="nombre" class="formulario__label">
-                <strong>PRECIO POR HORA</strong></label
-              >
-              <input
-                type="number" [formControl]="priceperhour"
-                placeholder="Ingresa un precio por hora"
-                name="name"
-                class="formulario__input"
-                id="nombre"
-              />
-              <div class="alert alert-danger mt-1" [hidden]="priceperhour.valid || priceperhour.pristine">
-                El precio por hora es obligatorio
-              </div>
+          <label for="nombre" class="formulario__label">
+            <strong>PROFESIÓN</strong></label
+          >
+          <input
+            type="text"
+            placeholder="Ingresa una profesión"
+            name="profesion"
+            class="formulario__input"
+            id="profesion"
+            formControlName="profession"
+          />
+            <div *ngIf="Profession.invalid && (Profession.dirty || Profession.touched)" class="text-danger">
+              <p *ngIf="Profession.errors?.['required']">* El campo es obligatorio.</p>
+            </div> 
+          <label for="nombre" class="formulario__label">
+            <strong>PRECIO POR HORA</strong></label
+          >
+          <input
+            type="number"
+            placeholder="Ingresa un precio por hora"
+            name="precio"
+            class="formulario__input"
+            id="precio"
+            formControlName="priceperhour"
+          />
+            <div *ngIf="Priceperhour.invalid && (Priceperhour.dirty || Priceperhour.touched)" class="text-danger">
+              <p *ngIf="Priceperhour.errors?.['required']">* El campo es obligatorio.</p>
+            </div> 
         </ng-container>
-        <button type="submit" class="formulario__button selected">REGISTRARSE</button>
+
+        <button type="submit" class="formulario__button selected">
+          REGISTRARSE
+        </button>
       </form>
     </div>
   </div>
