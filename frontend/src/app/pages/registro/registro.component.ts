@@ -66,7 +66,7 @@ export class RegistroComponent {
   signup() {
     if(this.signupForm.valid) {
       console.log("Enviar al servidor");
-      this.router.navigateByUrl('/login');
+      this.router.navigate(this.user_type === 'cliente' ? ['/login'] : ['/pagos'])
       this.signupForm.reset();
     }
     else
@@ -74,11 +74,7 @@ export class RegistroComponent {
       console.log("Error al ingresar los datos");
       this.signupForm.markAllAsTouched();
     }
-  }
-
-  // handleSubmit() {
-  //   this.router.navigate(this.user_type === 'cliente' ? ['/login'] : ['/pagos'])
-  // }
+  } 
 }
 
 

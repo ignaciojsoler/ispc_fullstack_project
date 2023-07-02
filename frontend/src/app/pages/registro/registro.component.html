@@ -90,13 +90,11 @@
       </div>
       <br />
 
-      <!-- (submit)="handleSubmit()" -->
       <form
         class="formulario"
         id="form"
-        
-        (ngSubmit)="signup()"
         [formGroup]="signupForm"
+        (ngSubmit)="signup()"
       >
         <label for="nombre" class="formulario__label">
           <strong>NOMBRE</strong>
@@ -104,7 +102,7 @@
         <input
           type="text"
           placeholder="Ingresa un nombre"
-          name="name"
+          name="nombre"
           class="formulario__input"
           id="nombre"
           formControlName="name"
@@ -120,7 +118,7 @@
           placeholder="Ingresa un apellido"
           name="apellido"
           class="formulario__input"
-          id="nombre"
+          id="apellido"
           formControlName="surname"
         />
           <div *ngIf="Surname.invalid && (Surname.dirty || Surname.touched)" class="text-danger">
@@ -132,7 +130,7 @@
         <input
           type="email"
           placeholder="Ingresa tu e-mail"
-          name="nombre"
+          name="email"
           class="formulario__input"
           id="email"
           formControlName="email"
@@ -156,7 +154,7 @@
           placeholder="Escribe tu contraseña"
           name="password"
           class="formulario__input"
-          id="pass"
+          id="pass1"
           formControlName="password"
         />
           <div
@@ -176,8 +174,9 @@
         <input
           type="password"
           placeholder="Repite tu contraseña"
-          name="password"
+          name="password2"
           class="formulario__input"
+          id="pass2"
           formControlName="confirmpassword"
         />
           <div
@@ -199,9 +198,9 @@
           <input
             type="text"
             placeholder="Ingresa una dirección"
-            name="name"
+            name="direccion"
             class="formulario__input"
-            id="nombre"
+            id="direccion"
             formControlName="address"
           />
             <div *ngIf="Address.invalid && (Address.dirty || Address.touched)" class="text-danger">
@@ -213,9 +212,9 @@
           <input
             type="text"
             placeholder="Ingresa una ciudad"
-            name="name"
+            name="ciudad"
             class="formulario__input"
-            id="nombre"
+            id="ciudad"
             formControlName="city"
           />
             <div *ngIf="City.invalid && (City.dirty || City.touched)" class="text-danger">
@@ -227,9 +226,9 @@
           <input
             type="text"
             placeholder="Ingresa una provincia"
-            name="name"
+            name="provincia"
             class="formulario__input"
-            id="nombre"
+            id="provincia"
             formControlName="province"
           />
             <div *ngIf="Province.invalid && (Province.dirty || Province.touched)" class="text-danger">
@@ -244,9 +243,9 @@
           <input
             type="text"
             placeholder="Ingresa una profesión"
-            name="name"
+            name="profesion"
             class="formulario__input"
-            id="nombre"
+            id="profesion"
             formControlName="profession"
           />
             <div *ngIf="Profession.invalid && (Profession.dirty || Profession.touched)" class="text-danger">
@@ -258,9 +257,9 @@
           <input
             type="number"
             placeholder="Ingresa un precio por hora"
-            name="name"
+            name="precio"
             class="formulario__input"
-            id="nombre"
+            id="precio"
             formControlName="priceperhour"
           />
             <div *ngIf="Priceperhour.invalid && (Priceperhour.dirty || Priceperhour.touched)" class="text-danger">
